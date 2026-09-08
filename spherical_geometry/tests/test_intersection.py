@@ -4,13 +4,12 @@ import functools
 import itertools
 import math
 import os
-from os import path
 import random
 
 # THIRD-PARTY
 import numpy as np
 import pytest
-from numpy.testing import assert_array_almost_equal, assert_allclose
+from numpy.testing import assert_allclose, assert_array_almost_equal
 
 # LOCAL
 from spherical_geometry import polygon
@@ -29,8 +28,8 @@ class intersection_test:
         @functools.wraps(func)
         def run(*args, **kwargs):
             if GRAPH_MODE:
-                from mpl_toolkits.basemap import Basemap
                 from matplotlib import pyplot as plt
+                from mpl_toolkits.basemap import Basemap
 
             polys = func(*args, **kwargs)
 
@@ -129,8 +128,8 @@ def test3():
 
 @pytest.mark.filterwarnings("ignore:CPERROR.*")
 def test4():
-    from astropy.io import fits
     from astropy import wcs as pywcs
+    from astropy.io import fits
 
     with fits.open(os.path.join(ROOT_DIR, '2chipA.fits.gz')) as A:
         wcs = pywcs.WCS(A[1].header, fobj=A)
@@ -596,8 +595,8 @@ def test_intersection_order_with_repeats_from_small_cones():
 
 
 def test_near_identical_polygons():
-    from astropy.wcs import WCS
     from astropy.io import fits
+    from astropy.wcs import WCS
 
     def sort_vertices(pts):
         idx = np.lexsort((pts[:,2], pts[:,1], pts[:,0]))

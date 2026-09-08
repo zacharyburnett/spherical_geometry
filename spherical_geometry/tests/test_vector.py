@@ -1,8 +1,8 @@
+import numpy as np
 import pytest
 
-import numpy as np
-
 from spherical_geometry.vector import normalize_vector
+
 
 @pytest.mark.filterwarnings("ignore::RuntimeWarning")
 def test_normalize_vector():

@@ -1,18 +1,14 @@
+import math
 import os
 import os.path
-import math
 import random
 
 import numpy as np
 import pytest
-from numpy.testing import assert_almost_equal, assert_allclose
+from numpy.testing import assert_allclose, assert_almost_equal
 
 from spherical_geometry import graph, great_circle_arc, polygon, vector
-from spherical_geometry.tests.helpers import (
-    ROOT_DIR,
-    get_point_set,
-    resolve_imagename
-)
+from spherical_geometry.tests.helpers import ROOT_DIR, get_point_set, resolve_imagename
 
 try:
     from spherical_geometry import math_util
